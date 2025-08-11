@@ -1,0 +1,101 @@
+/* ----- 1. CONFIGURACIÓN GENERAL Y VARIABLES DE COLOR ----- */
+:root {
+    --color-menta-suave: #A0D9D3;
+    --color-beige-crema: #F7F1E6;
+    --color-marron-chocolate: #8B6E60;
+    --color-blanco-puro: #FFFFFF;
+    --color-dorado-suave: #D4AF37;
+
+    --fuente-titulos: 'Pacifico', cursive;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-beige-crema); /* Color base del lienzo */
+    color: var(--color-marron-chocolate);
+    font-family: var(--fuente-cuerpo);
+    scroll-behavior: smooth; /* Para un scroll suave entre secciones si se usaran anclas */
+    overflow-x: hidden; /* Previene el scroll horizontal */
+}
+
+/* ----- 2. ESTILO DE LAS SECCIONES DE PRODUCTO ----- */
+.producto {
+    min-height: 90vh; /* Cada sección ocupa casi toda la pantalla para enfocar un producto a la vez */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw; /* Espacio entre la imagen y el texto */
+    padding: 40px;
+    flex-wrap: wrap; /* Permite que los elementos se reordenen en pantallas pequeñas */
+}
+
+/* Estilo para invertir el orden de imagen y texto, creando dinamismo */
+.producto-invertido {
+    flex-direction: row-reverse;
+    background-color: var(--color-menta-suave); /* Alternamos el color de fondo para una transición suave */
+}
+
+.producto-imagen {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    text-align: center;
+}
+
+.producto-imagen img {
+    max-width: 100%;
+    max-height: 400px; /* Ajusta según el tamaño de tus mejores fotos */
+    object-fit: contain;
+    /* Efecto sutil para que la imagen "flote" */
+    filter: drop-shadow(5px 8px 10px rgba(0, 0, 0, 0.15)); 
+}
+
+.producto-info {
+    flex: 1 1 300px;
+    max-width: 450px;
+}
+
+/* ----- 3. ESTILOS DE TEXTO ----- */
+.producto-info h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 3.5rem; /* Tamaño grande y amigable */
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.producto-info .descripcion {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.producto-info .precios {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.producto-info .codigo {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-dorado-suave); /* Usamos el color de acento opcional */
+}
+
+/* ----- 4. AJUSTES PARA PANTALLAS PEQUEÑAS (MÓVILES) ----- */
+@media (max-width: 768px) {
+    .producto, .producto-invertido {
+        flex-direction: column; /* Apila la imagen sobre el texto */
+        text-align: center;
+        min-height: auto; /* Altura automática en móviles */
+        padding: 60px 20px;
+    }
+
+    .producto-info h1 {
+        font-size: 2.8rem;
+    }
+}
