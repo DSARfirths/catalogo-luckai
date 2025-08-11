@@ -99,3 +99,76 @@ body {
         font-size: 2.8rem;
     }
 }
+/* Estilo para la sección de bienvenida con el logo */
+.hero-introduccion {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--color-beige-crema); /* Mantenemos el color base del lienzo */
+}
+
+.hero-introduccion .logo {
+    max-width: 180px; /* Ajusta el tamaño del logo como prefieras */
+    border-radius: 50%; /* Lo hacemos circular para un look más amigable */
+    margin-bottom: 25px;
+    box-shadow: 0px 10px 20px rgba(139, 110, 96, 0.2); /* Sombra sutil con el color del texto */
+}
+
+.hero-introduccion h2 {
+    font-family: var(--fuente-titulos); /* Usamos la misma fuente cursiva */
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.hero-introduccion p {
+    max-width: 500px; /* Limitamos el ancho del texto para mejor legibilidad */
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Estilo para la sección final de llamado a la acción */
+.pedido-whatsapp {
+    background-color: var(--color-menta-suave); /* Usamos el color menta para diferenciar */
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pedido-whatsapp h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.pedido-whatsapp p {
+    max-width: 550px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Estilo para el botón de WhatsApp */
+.boton-whatsapp {
+    display: inline-block;
+    background-color: var(--color-marron-chocolate);
+    color: var(--color-blanco-puro);
+    padding: 15px 30px;
+    border-radius: 50px; /* Hacemos el botón ovalado */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.boton-whatsapp:hover {
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+    background-color: #7a5f51; /* Un tono de marrón ligeramente más claro */
+}
