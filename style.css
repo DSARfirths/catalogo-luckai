@@ -356,3 +356,41 @@ body {
         padding: 20px 10px; /* Padding inicial más pequeño para el header en móvil */
     }
  }
+ 
+ /* Estilo para el texto de la fecha */
+ .fecha-hoy {
+     font-size: 1.1em;
+     font-weight: bold;
+     color: #d63384; /* Un color que combine con tu paleta */
+     text-align: center;
+     margin-bottom: 1em;
+ }
+ 
+ /* Estilos para los mensajes de stock */
+ .estado-stock {
+     font-weight: bold;
+     padding: 5px 10px;
+     border-radius: 5px;
+     display: inline-block;
+     margin-bottom: 10px;
+     font-size: 0.9em;
+ }
+ 
+ .estado-stock.disponible {
+     background-color: #d1e7dd; /* Verde suave */
+     color: #0f5132; /* Verde oscuro */
+ }
+ 
+ .estado-stock.agotado {
+     background-color: #f8d7da; /* Rojo suave */
+     color: #842029; /* Rojo oscuro */
+ }
+ 
+ /* Estilo para los botones de compra deshabilitados */
+ .boton-comprar.deshabilitado {
+     background-color: #6c757d; /* Gris */
+     cursor: not-allowed;
+     opacity: 0.7;
+     pointer-events: none; /* Doble seguro para evitar clics */
+ }
+ 
