@@ -11,18 +11,20 @@
 }
 
 * {
-    margin: 0;
+    margin: 0; /* Esto será sobrescrito para el padding-top del body */
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: var(--color-beige-crema); /* Color base del lienzo */
+    background-color: var(--color-beige-crema);
     color: var(--color-marron-chocolate);
     font-family: var(--fuente-cuerpo);
-    scroll-behavior: smooth; /* Para un scroll suave entre secciones si se usaran anclas */
-    overflow-x: hidden; /* Previene el scroll horizontal */
+    padding-top: 270px; /* Ajustado para dejar suficiente espacio al header grande */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
+
 
 /* ----- 2. ESTILO DE LAS SECCIONES DE PRODUCTO ----- */
 .producto {
@@ -33,6 +35,16 @@ body {
     gap: 5vw; /* Espacio entre la imagen y el texto */
     padding: 40px;
     flex-wrap: wrap; /* Permite que los elementos se reordenen en pantallas pequeñas */
+
+    /* Estilos para la animación de fade-in */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.producto.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Estilo para invertir el orden de imagen y texto, creando dinamismo */
@@ -52,6 +64,12 @@ body {
     object-fit: contain;
     /* Efecto sutil para que la imagen "flote" */
     filter: drop-shadow(5px 8px 10px rgba(0, 0, 0, 0.15)); 
+    transition: transform 0.4s ease, filter 0.4s ease; /* Transición suave para el efecto hover */
+}
+
+.producto-imagen img:hover {
+    transform: scale(1.03); /* Agrandamos ligeramente la imagen */
+    filter: drop-shadow(8px 12px 15px rgba(0, 0, 0, 0.2)); /* Hacemos la sombra un poco más pronunciada */
 }
 
 .producto-info {
@@ -80,12 +98,6 @@ body {
     margin-bottom: 20px;
 }
 
-.producto-info .codigo {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--color-dorado-suave); /* Usamos el color de acento opcional */
-}
-
 /* ----- 4. AJUSTES PARA PANTALLAS PEQUEÑAS (MÓVILES) ----- */
 @media (max-width: 768px) {
     .producto, .producto-invertido {
@@ -96,29 +108,57 @@ body {
     }
 
     .producto-info h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem; /* Ajustado ligeramente para mejor ajuste en móvil */
     }
 }
+
+/* ----- 5. ESTILOS DEL ENCABEZADO FIJO (HEADER) ----- */
+#main-header {
+    position: fixed; /* Hace que el header se quede fijo en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-beige-crema); /* Fondo del header */
+    padding: 40px 20px; /* Padding inicial grande para el logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil para destacarlo */
+    transition: all 0.3s ease-in-out; /* Transición suave para todos los cambios */
+}
+
+#main-header .logo {
+    max-width: 180px; /* Tamaño inicial del logo */
+    border-radius: 50%; /* Circular */
+    box-shadow: 0px 10px 20px rgba(139, 110, 96, 0.2); /* Sombra del logo */
+    transition: max-width 0.3s ease-in-out; /* Transición para el tamaño del logo */
+}
+
+/* Estilos para el header cuando se ha hecho scroll (clase 'scrolled' añadida por JS) */
+#main-header.scrolled {
+    padding: 15px 20px; /* Padding más pequeño */
+}
+
+#main-header.scrolled .logo {
+    max-width: 80px; /* Tamaño más pequeño del logo */
+}
+
 /* Estilo para la sección de bienvenida con el logo */
-.hero-introduccion {
-    min-height: 85vh;
+.hero-introduccion { /* Estos estilos ahora se aplican globalmente */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
-    background-color: var(--color-beige-crema); /* Mantenemos el color base del lienzo */
+    padding: 0 20px 40px 20px; /* Padding global para la sección */
+    max-width: 800px; /* Limita el ancho del contenido para mejor legibilidad */
+    margin: 0 auto; /* Centra la sección horizontalmente */
+    min-height: 50vh; /* Una altura mínima razonable para la sección de bienvenida */
 }
 
-.hero-introduccion .logo {
-    max-width: 180px; /* Ajusta el tamaño del logo como prefieras */
-    border-radius: 50%; /* Lo hacemos circular para un look más amigable */
-    margin-bottom: 25px;
-    box-shadow: 0px 10px 20px rgba(139, 110, 96, 0.2); /* Sombra sutil con el color del texto */
-}
-
-.hero-introduccion h2 {
+/* El logo ya no está en esta sección, por lo que estos estilos se mantienen para el texto */
+.hero-introduccion h2 { 
     font-family: var(--fuente-titulos); /* Usamos la misma fuente cursiva */
     font-size: 2.5rem;
     font-weight: 400;
@@ -172,3 +212,147 @@ body {
     transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
     background-color: #7a5f51; /* Un tono de marrón ligeramente más claro */
 }
+ /* Estilos para los nuevos botones de compra */
+ .producto-acciones {
+     margin-top: 15px;
+     display: flex;
+     gap: 10px; /* Espacio entre botones */
+     flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
+ }
+ 
+ /* Busca esta regla en tu style.css y modifícala */
+ .boton-comprar {
+     background-color: #25D366; /* Color de WhatsApp */
+     color: white;
+     padding: 8px 15px;
+     border-radius: 20px;
+     text-decoration: none;
+     font-weight: bold;
+     font-size: 0.9em;
+     transition: background-color 0.3s ease;
+     /* --- INICIO DE CAMBIOS --- */
+     display: inline-flex; /* Usamos flexbox para alinear el ícono y el texto */
+     align-items: center; /* Centramos verticalmente el contenido */
+     justify-content: center; /* Centramos horizontalmente el contenido */
+     gap: 8px; /* Espacio entre el ícono y el texto */
+     /* --- FIN DE CAMBIOS --- */
+ }
+ 
+ .boton-comprar:hover {
+     background-color: #128C7E; /* Un tono más oscuro de WhatsApp al pasar el mouse */
+ }
+
+ /* ----- 6. BOTÓN FLOTANTE DE WHATSAPP ----- */
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366; /* Color oficial de WhatsApp */
+    color: var(--color-blanco-puro);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px; /* Tamaño del ícono */
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1001; /* Un z-index alto para que esté sobre todo */
+    /* Oculto por defecto con una transición suave */
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none; /* No se puede hacer clic cuando está oculto */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.whatsapp-flotante.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto; /* Se puede hacer clic cuando es visible */
+}
+.whatsapp-flotante:hover {
+    transform: scale(1.1); /* Agrandar un poco al pasar el mouse */
+}
+
+/* ----- 7. SECCIONES INFORMATIVAS ADICIONALES ----- */
+.info-adicional {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: var(--color-blanco-puro); /* Un fondo ligeramente diferente para destacar */
+    flex-wrap: wrap;
+    text-align: center;
+    border-bottom: 1px solid var(--color-dorado-suave);
+}
+
+.info-item {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-item h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--color-marron-chocolate);
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.boton-consulta {
+    background-color: var(--color-dorado-suave);
+    color: var(--color-marron-chocolate);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-marron-chocolate);
+}
+
+.boton-consulta:hover {
+    background-color: var(--color-marron-chocolate);
+    color: var(--color-blanco-puro);
+}
+
+ /* Re-organizamos la media query al final para una mejor cascada */
+ @media (max-width: 768px) {
+     .producto, .producto-invertido {
+         flex-direction: column;
+         text-align: center;
+         padding: 60px 20px; /* Asegura un padding consistente */
+         min-height: auto; /* Permite que la altura se ajuste */
+     }
+ 
+     .producto-info {
+         padding: 20px;
+     }
+
+     .producto-info h1 {
+        font-size: 2.5rem; /* Consistente con el ajuste anterior */
+     }
+
+     
+     .boton-comprar {
+         padding: 12px 15px; /* Aumentamos el espacio interior para hacerlo más grande */
+         font-size: 1em;     /* Hacemos la letra un poco más grande */
+         flex-grow: 1;       /* Hacemos que los botones crezcan y ocupen el espacio disponible */
+     }
+     /* --- FIN DEL CÓDIGO A AÑADIR --- */
+ }
+
+ /* Ajustes móviles para el encabezado fijo */
+ @media (max-width: 768px) {
+    #main-header {
+        padding: 20px 10px; /* Padding inicial más pequeño para el header en móvil */
+    }
+ }

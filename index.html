@@ -2,36 +2,77 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- SEO Meta Tags -->
+    <title>Postres y Tortas en Piura | Catálogo LucKai</title>
+    <meta name="description" content="Descubre los mejores postres, tortas y dulces artesanales en Piura. En LucKai preparamos todo a pedido con amor. ¡Haz tu pedido por WhatsApp!">
+    <meta name="keywords" content="postres piura, tortas piura, dulces piura, pastelería piura, luckai, torta de chocolate, alfajores, red velvet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo LucKai - Dulces y Salados</title>
+    <meta name="author" content="LucKai">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Structured Data (JSON-LD) para SEO Avanzado -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "LucKai Postres en Piura",
+      "image": "https://www.yourwebsite.com/assets/img/logo.jpg", // IMPORTANTE: Reemplaza esto con la URL completa de tu logo
+      "description": "Venta de postres, tortas y dulces artesanales a pedido en Piura. Especialistas en torta de chocolate, red velvet, alfajores y más.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Piura",
+        "addressRegion": "PIU",
+        "addressCountry": "PE"
+      },
+      "telephone": "+51904004155",
+      "url": "https://www.yourwebsite.com" // IMPORTANTE: Reemplaza esto con la URL de tu página web
+    }
+    </script>
 </head>
 <body>
-    <header class="hero-introduccion">
-        <img src="assets/img/logo.jpg" alt="Logo de Pastelería LucKai" class="logo">
-        <h2>Hecho con cariño, para compartir</h2>
+    <header id="main-header">
+        <img src="assets/img/logo.jpg" alt="Luckai Logo" class="logo">
+    </header>
+    <section class="hero-introduccion">
+        <h2>Postres artesanales en Piura</h2>
         <p>
-            Bienvenido a nuestro lienzo de sabores. Aquí cada postre es una obra de arte,
-            preparada con los mejores ingredientes y una dosis extra de amor. 
+            Bienvenido a LucKai, tu pastelería en Piura. Aquí cada postre es una obra de arte,
+            preparada con los mejores ingredientes y una dosis extra de amor para compartir. 
             Desliza y antoja con la mirada.
         </p>
-    </header>
+    </section>
+    <!-- Secciones informativas -->
+    <section class="info-adicional">
+        <div class="info-item">
+            <h3>&#127827; Somos una Cocina Oculta</h3>
+            <p>No tenemos un local físico. Preparamos cada pedido con amor en nuestra cocina dedicada y lo llevamos directamente a tu puerta, garantizando la máxima frescura.</p>
+        </div>
+        <div class="info-item">
+            <h3>&#128666; Delivery Gratis en Piura</h3>
+            <p>¡Tu postre favorito llega sin costo extra! Ofrecemos delivery gratuito en zonas seleccionadas de Piura, Castilla y Veintiséis de Octubre.</p>
+            <a href="https://wa.me/51904004155?text=Hola,%20quisiera%20consultar%20si%20mi%20zona%20tiene%20delivery%20gratis." class="boton-consulta" target="_blank">Consulta si tu zona aplica</a>
+        </div>
+    </section>
     <main class="lienzo-principal">
 
         <section class="producto">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Torta de chocolate.png" alt="Torta de Chocolate Especial">
+                <img src="assets/img/Productos/Torta de chocolate.png" alt="Torta de Chocolate Especial en Piura">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="torta-chocolate">
                 <h1>Torta de Chocolate</h1>
                 <p class="descripcion">Nuestra clásica torta húmeda de chocolate, rellena y cubierta con un fudge artesanal que te recordará a casa.</p>
                 <p class="precios"><span>Entera: S/ 55.00</span> | <span>Porción: S/ 9.00</span></p>
-                <p class="codigo">Cod: LK001</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Torta%20de%20Chocolate%20(Entera)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Entera</a>
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Torta%20de%20Chocolate%20(Porci%C3%B3n)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Porción</a>
+                </div>
             </div>
         </section>
 
@@ -39,11 +80,14 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Alfajores.png" alt="Alfajores caseros con manjarblanco">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="alfajores">
                 <h1>Alfajores</h1>
                 <p class="descripcion">Suaves y delicadas galletas que se deshacen en la boca, unidas por un generoso corazón de manjarblanco.</p>
                 <p class="precios"><span>Caja x6: S/ 15.00</span> | <span>Unidad: S/ 3.00</span></p>
-                <p class="codigo">Cod: LK002</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Alfajores%20(Caja%20x6)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Caja x6</a>
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Alfajores%20(Unidad)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Unidad</a>
+                </div>
             </div>
         </section>
         
@@ -51,23 +95,29 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Torta red velvet.png" alt="Torta Red Velvet">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="red-velvet">
                 <h1>Torta Red Velvet</h1>
                 <p class="descripcion">Elegante bizcocho de terciopelo rojo con un toque de cacao, cubierto con un suave frosting de queso crema.</p>
                 <p class="precios"><span>Entera: S/ 60.00</span> | <span>Porción: S/ 10.00</span></p>
-                <p class="codigo">Cod: LK003</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Torta%20Red%20Velvet%20(Entera)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Entera</a>
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Torta%20Red%20Velvet%20(Porci%C3%B3n)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Porción</a>
+                </div>
             </div>
         </section>
         
         <section class="producto producto-invertido">
-            <div class="producto-imagen">
+            <div class="producto-imagen" >
                 <img src="assets/img/Productos/Rebanada tres leches.png" alt="Rebanada de Torta Tres Leches">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="tres-leches">
                 <h1>Torta Tres Leches</h1>
                 <p class="descripcion">Bizcocho esponjoso bañado en una mezcla celestial de tres leches, coronado con merengue italiano.</p>
                 <p class="precios"><span>Entera: S/ 50.00</span> | <span>Porción: S/ 8.50</span></p>
-                <p class="codigo">Cod: LK004</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Torta%20Tres%20Leches%20(Entera)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Entera</a>
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Torta%20Tres%20Leches%20(Porci%C3%B3n)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Porción</a>
+                </div>
             </div>
         </section>
 
@@ -75,11 +125,14 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Chocoflan torta completa.png" alt="Chocoflan Torta Completa">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="chocoflan">
                 <h1>Chocoflan</h1>
                 <p class="descripcion">La combinación mágica y perfecta. Suave flan sobre un bizcocho de chocolate húmedo, bañado en caramelo.</p>
                 <p class="precios"><span>Entero: S/ 58.00</span> | <span>Porción: S/ 9.50</span></p>
-                <p class="codigo">Cod: LK005</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Chocoflan%20(Entero)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Entero</a>
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Chocoflan%20(Porci%C3%B3n)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Porción</a>
+                </div>
             </div>
         </section>
 
@@ -87,11 +140,14 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Crema volteada rebanada.png" alt="Rebanada de Crema Volteada">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="crema-volteada">
                 <h1>Crema Volteada</h1>
                 <p class="descripcion">El postre tradicional por excelencia. Textura cremosa y un delicioso baño de caramelo líquido dorado.</p>
                 <p class="precios"><span>Entera: S/ 45.00</span> | <span>Porción: S/ 7.00</span></p>
-                <p class="codigo">Cod: LK006</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Crema%20Volteada%20(Entera)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Entera</a>
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Crema%20Volteada%20(Porci%C3%B3n)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Porción</a>
+                </div>
             </div>
         </section>
 
@@ -99,11 +155,13 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Bizcocho de Naranja Glaseado.png" alt="Bizcocho de Naranja Glaseado">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="bizcocho-naranja">
                 <h1>Bizcocho de Naranja</h1>
                 <p class="descripcion">Esponjoso y aromático queque casero con jugo de naranja natural, cubierto con un glaseado cítrico.</p>
                 <p class="precios"><span>Entero: S/ 35.00</span></p>
-                <p class="codigo">Cod: LK007</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Bizcocho%20de%20Naranja%20(Entero)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Entero</a>
+                </div>
             </div>
         </section>
 
@@ -111,11 +169,14 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Savarin de Limón.png" alt="Savarín de Limón">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="savarin-limon">
                 <h1>Savarín de Limón</h1>
                 <p class="descripcion">Un bizcocho ligero y aireado, empapado en un almíbar de limón que le da un sabor fresco e inolvidable.</p>
                 <p class="precios"><span>Entero: S/ 40.00</span> | <span>Porción: S/ 7.00</span></p>
-                <p class="codigo">Cod: LK008</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Savar%C3%ADn%20de%20Lim%C3%B3n%20(Entero)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Entero</a>
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Savar%C3%ADn%20de%20Lim%C3%B3n%20(Porci%C3%B3n)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Porción</a>
+                </div>
             </div>
         </section>
 
@@ -123,11 +184,13 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Una rebanada de pionono.png" alt="Pionono relleno">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="pionono-clasico">
                 <h1>Pionono Clásico</h1>
                 <p class="descripcion">Rollo de bizcocho extra suave y elástico, relleno del más cremoso manjarblanco y espolvoreado con azúcar fina.</p>
                 <p class="precios"><span>Entero: S/ 30.00</span></p>
-                <p class="codigo">Cod: LK009</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Pionono%20Cl%C3%A1sico%20(Entero)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Entero</a>
+                </div>
             </div>
         </section>
 
@@ -135,11 +198,14 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Mil hojas de café.png" alt="Mil hojas de café">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="mil-hojas-cafe">
                 <h1>Mil Hojas de Café</h1>
                 <p class="descripcion">Capas de hojaldre crujiente intercaladas con una delicada crema pastelera con un intenso sabor a café.</p>
                 <p class="precios"><span>Entero: S/ 55.00</span> | <span>Porción: S/ 9.00</span></p>
-                <p class="codigo">Cod: LK010</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Mil%20Hojas%20de%20Caf%C3%A9%20(Entero)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Entero</a>
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Mil%20Hojas%20de%20Caf%C3%A9%20(Porci%C3%B3n)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Porción</a>
+                </div>
             </div>
         </section>
 
@@ -147,11 +213,13 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Bavarois de melocotón individual.png" alt="Bavarois de melocotón individual">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="bavarois-melocoton">
                 <h1>Bavarois de Melocotón</h1>
                 <p class="descripcion">Mousse aéreo y delicado con pulpa de melocotón natural, una opción fresca y ligera para cualquier ocasión.</p>
                 <p class="precios"><span>Individual: S/ 10.00</span></p>
-                <p class="codigo">Cod: LK011</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Bavarois%20de%20Melocot%C3%B3n%20(Individual)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Individual</a>
+                </div>
             </div>
         </section>
 
@@ -159,11 +227,14 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Gelatina mosaico.png" alt="Gelatina Mosaico">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="gelatina-mosaico">
                 <h1>Gelatina Mosaico</h1>
                 <p class="descripcion">Divertidos y coloridos cubos de gelatinas de sabores, suspendidos en una gelatina cremosa de leche.</p>
                 <p class="precios"><span>Fuente: S/ 35.00</span> | <span>Vaso: S/ 5.00</span></p>
-                <p class="codigo">Cod: LK012</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Gelatina%20Mosaico%20(Fuente)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Fuente</a>
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Gelatina%20Mosaico%20(Vaso)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Vaso</a>
+                </div>
             </div>
         </section>
 
@@ -171,24 +242,32 @@
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Crepes finos y delicados.png" alt="Crepes finos y delicados">
             </div>
-            <div class="producto-info">
+            <div class="producto-info" id="crepes">
                 <h1>Crepes</h1>
                 <p class="descripcion">Finas y delicadas crepes rellenas de manjarblanco o fudge de chocolate, tú eliges tu favorita.</p>
                 <p class="precios"><span>Porción (2 und): S/ 12.00</span></p>
-                <p class="codigo">Cod: LK013</p>
+                <div class="producto-acciones">
+                    <a href="https://wa.me/51904004155?text=Hola,%20estoy%20interesado/a%20en%20comprar%20Crepes%20(Porci%C3%B3n%20%282%20und%29)." class="boton-comprar" target="_blank"><i class="fas fa-shopping-cart"></i> Comprar Porción (2 und)</a>
+                </div>
             </div>
         </section>
         
     </main>
+
     <footer class="pedido-whatsapp">
-        <h2>¿Viste algo que te gustó?</h2>
+        <h2>¿Antojado de un postre en Piura?</h2>
         <p>
-            Todos nuestros postres se preparan a pedido para garantizar su frescura. 
-            ¡Escríbenos para hacer tu consulta o separar tu favorito!
+            Todos nuestros postres en Piura se preparan a pedido para garantizar su frescura. 
+            ¡Escríbenos para hacer tu consulta o separar tu dulce favorito!
         </p>
         <a href="https://wa.me/51904004155" class="boton-whatsapp" target="_blank">
             Pedir por WhatsApp
         </a>
     </footer>
+        <!-- Botón Flotante de WhatsApp -->
+        <a href="https://wa.me/51904004155?text=Hola,%20quisiera%20hacer%20una%20consulta." class="whatsapp-flotante" target="_blank" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <script src="script.js"></script>
 </body>
 </html>
