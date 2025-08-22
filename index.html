@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Structured Data (JSON-LD) para SEO Avanzado -->
     <script type="application/ld+json">
@@ -22,7 +22,7 @@
       "@context": "https://schema.org",
       "@type": "Bakery",
       "name": "LucKai Postres en Piura",
-      "image": "https://www.yourwebsite.com/assets/img/logo.jpg", // IMPORTANTE: Reemplaza esto con la URL completa de tu logo
+      "image": "https://dsarfirths.github.io/catalogo-luckai/assets/img/logo.jpg",
       "description": "Venta de postres, tortas y dulces artesanales a pedido en Piura. Especialistas en torta de chocolate, red velvet, alfajores y más.",
       "address": {
         "@type": "PostalAddress",
@@ -31,13 +31,13 @@
         "addressCountry": "PE"
       },
       "telephone": "+51904004155",
-      "url": "https://www.yourwebsite.com" // IMPORTANTE: Reemplaza esto con la URL de tu página web
+      "url": "https://dsarfirths.github.io/catalogo-luckai/"
     }
     </script>
 </head>
 <body>
     <header id="main-header">
-        <img src="assets/img/logo.jpg" alt="Luckai Logo" class="logo">
+        <img src="assets/img/logo.jpg" alt="Logo de LucKai Pastelería en Piura" class="logo">
     </header>
     <section class="hero-introduccion">
         <h2>Postres artesanales en Piura</h2>
@@ -65,7 +65,7 @@
         <section class="producto">
             <div class="producto-imagen">
                 <img src="assets/img/Productos/Torta de chocolate.png" alt="Torta de Chocolate Especial en Piura">
-            </div>
+           </div>
             <div class="producto-info" id="torta-chocolate">
                 <h1>Torta de Chocolate</h1>
                 <p class="descripcion">Nuestra clásica torta húmeda de chocolate, rellena y cubierta con un fudge artesanal que te recordará a casa.</p>
@@ -82,7 +82,7 @@
 
         <section class="producto producto-invertido">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Alfajores.png" alt="Alfajores caseros con manjarblanco">
+                <img src="assets/img/Productos/Alfajores.png" alt="Alfajores caseros con manjarblanco" loading="lazy">
             </div>
             <div class="producto-info" id="alfajores">
                 <h1>Alfajores</h1>
@@ -100,7 +100,7 @@
         
         <section class="producto">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Torta red velvet.png" alt="Torta Red Velvet">
+                <img src="assets/img/Productos/Torta red velvet.png" alt="Torta Red Velvet" loading="lazy">
             </div>
             <div class="producto-info" id="red-velvet">
                 <h1>Torta Red Velvet</h1>
@@ -118,7 +118,7 @@
         
         <section class="producto producto-invertido">
             <div class="producto-imagen" >
-                <img src="assets/img/Productos/Rebanada tres leches.png" alt="Rebanada de Torta Tres Leches">
+                <img src="assets/img/Productos/Rebanada tres leches.png" alt="Rebanada de Torta Tres Leches" loading="lazy">
             </div>
             <div class="producto-info" id="tres-leches">
                 <h1>Torta Tres Leches</h1>
@@ -136,7 +136,7 @@
 
         <section class="producto">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Chocoflan torta completa.png" alt="Chocoflan Torta Completa">
+                <img src="assets/img/Productos/Chocoflan torta completa.png" alt="Chocoflan Torta Completa" loading="lazy">
             </div>
             <div class="producto-info" id="chocoflan">
                 <h1>Chocoflan</h1>
@@ -154,7 +154,7 @@
 
         <section class="producto producto-invertido">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Crema volteada rebanada.png" alt="Rebanada de Crema Volteada">
+                <img src="assets/img/Productos/Crema volteada rebanada.png" alt="Rebanada de Crema Volteada" loading="lazy">
             </div>
             <div class="producto-info" id="crema-volteada">
                 <h1>Crema Volteada</h1>
@@ -172,7 +172,7 @@
 
         <section class="producto">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Bizcocho de Naranja Glaseado.png" alt="Bizcocho de Naranja Glaseado">
+                <img src="assets/img/Productos/Bizcocho de Naranja Glaseado.png" alt="Bizcocho de Naranja Glaseado" loading="lazy">
             </div>
             <div class="producto-info" id="bizcocho-naranja">
                 <h1>Bizcocho de Naranja</h1>
@@ -188,7 +188,7 @@
 
         <section class="producto producto-invertido">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Savarin de Limón.png" alt="Savarín de Limón">
+                <img src="assets/img/Productos/Savarin de Limón.png" alt="Savarín de Limón" loading="lazy">
             </div>
             <div class="producto-info" id="savarin-limon">
                 <h1>Savarín de Limón</h1>
@@ -206,7 +206,7 @@
 
         <section class="producto">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Una rebanada de pionono.png" alt="Pionono relleno">
+                <img src="assets/img/Productos/Una rebanada de pionono.png" alt="Pionono relleno" loading="lazy">
             </div>
             <div class="producto-info" id="pionono-clasico">
                 <h1>Pionono Clásico</h1>
@@ -223,7 +223,7 @@
 
         <section class="producto producto-invertido">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Mil hojas de café.png" alt="Mil hojas de café">
+                <img src="assets/img/Productos/Mil hojas de café.png" alt="Mil hojas de café" loading="lazy">
             </div>
             <div class="producto-info" id="mil-hojas-cafe">
                 <h1>Mil Hojas de Café</h1>
@@ -241,7 +241,7 @@
 
         <section class="producto">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Bavarois de melocotón individual.png" alt="Bavarois de melocotón individual">
+                <img src="assets/img/Productos/Bavarois de melocotón individual.png" alt="Bavarois de melocotón individual" loading="lazy">
             </div>
             <div class="producto-info" id="bavarois-melocoton">
                 <h1>Bavarois de Melocotón</h1>
@@ -258,7 +258,7 @@
 
         <section class="producto producto-invertido">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Gelatina mosaico.png" alt="Gelatina Mosaico">
+                <img src="assets/img/Productos/Gelatina mosaico.png" alt="Gelatina Mosaico" loading="lazy">
             </div>
             <div class="producto-info" id="gelatina-mosaico">
                 <h1>Gelatina Mosaico</h1>
@@ -276,7 +276,7 @@
 
         <section class="producto">
             <div class="producto-imagen">
-                <img src="assets/img/Productos/Crepes finos y delicados.png" alt="Crepes finos y delicados">
+                <img src="assets/img/Productos/Crepes finos y delicados.png" alt="Crepes finos y delicados" loading="lazy">
             </div>
             <div class="producto-info" id="crepes">
                 <h1>Crepes</h1>
@@ -307,6 +307,11 @@
         <a href="https://wa.me/51904004155?text=Hola,%20quisiera%20hacer%20una%20consulta." class="whatsapp-flotante" target="_blank" aria-label="Contactar por WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
+        <!-- Botón para Volver Arriba -->
+        <button id="scroll-to-top-btn" aria-label="Volver arriba">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="script.js"></script>
 </body>
 </html>

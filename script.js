@@ -3,15 +3,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- PANEL DE CONTROL DE STOCK ---
     // Aquí es el único lugar que necesitas editar cada día.
     //
-    // --- LÓGICA PARA EL ENCABEZADO FIJO (HEADER) ---
+    // --- LÓGICA PARA EL SCROLL (HEADER Y BOTONES FLOTANTES) ---
     const header = document.getElementById('main-header');
+    const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+    const whatsappBtn = document.querySelector('.whatsapp-flotante');
     const scrollThreshold = 50; // Cuántos píxeles debe hacer scroll el usuario para activar el cambio
 
     window.addEventListener('scroll', () => {
+        // 1. Lógica para el header
         if (window.scrollY > scrollThreshold) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
+        }
+
+        // 2. Lógica para los botones flotantes (WhatsApp y Volver Arriba)
+        if (window.scrollY > 400) { // Aparece después de 400px de scroll
+            scrollToTopBtn.classList.add('visible');
+            whatsappBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+            whatsappBtn.classList.remove('visible');
         }
     });
 
@@ -35,6 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     productSections.forEach(section => {
         productObserver.observe(section);
+    });
+
+    // --- EVENTO CLICK PARA EL BOTÓN VOLVER ARRIBA ---
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
     // --- PANEL DE CONTROL DE PRECIOS ---
