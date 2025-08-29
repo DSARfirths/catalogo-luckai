@@ -118,14 +118,18 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--color-beige-crema); /* Fondo del header */
     padding: 40px 20px; /* Padding inicial grande para el logo */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil para destacarlo */
     transition: all 0.3s ease-in-out; /* Transición suave para todos los cambios */
+
+    /* --- Efecto de vidrio (Glassmorphism) --- */
+    background: rgba(247, 241, 230, 0.5); /* Usamos el color beige de fondo pero semitransparente */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
 }
 
 #main-header .logo {
